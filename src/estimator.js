@@ -16,7 +16,7 @@ const covid19ImpactEstimator = (data) => {
   }
 
   const factor = Math.trunc(days / 3);
-  const beds = Math.trunc(totalHospitalBeds * 0.35);
+  const beds = Math.ceil(totalHospitalBeds * 0.35);
 
   impact.currentlyInfected = reportedCases * 10;
   impact.infectionsByRequestedTime = impact.currentlyInfected * (2 ** factor);
