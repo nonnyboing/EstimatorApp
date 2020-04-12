@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 ESTIMATOR APP</title>
+
+    <style>
+        #root {
+            width: 40%;
+            margin: 20px auto;
+            border: 2px solid blue;
+            padding: 10px;
+            background-color: rgba(131, 131, 185, 0.100);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            color: blue;
+            padding-left: 20px;
+        }
+
+        p {
+            color: red;
+        }
+        input {
+            width: 60%;
+            height: 30px;
+            margin-bottom: 30px;
+        }
+        select {
+            height: 35px;
+            width:150px;
+            
+        }
+        label {
+            font-weight: bold;
+            color: blue;
+        }
+
+        button{
+            height: 50px;
+            width: 100px;
+            margin-left: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="root">
+        <H1>COVID-19 IMPACT ESTIMATOR</H1><hr>
+        <p>Fill in the details below (All the fields are required)</p>
+        <form id="estForm" method="POST">
+            <label for="">Population</label><br>
+            <input type="number" id="population" data-population required><br>
+            <label for="">Reported Cases</label><br>
+            <input type="number" id="reportedCases" data-reported-cases required><br>
+            <label for="">Time Frame</label><br>
+            <input type="number" id="timeToElapse"  data-time-to-elapse required>
+            <select id="periodType" data-period-type>
+                <option value="days">Days</option>
+                <option value="weeks">Weeks</option>
+                <option value="months">Months</option>
+            </select><br>
+            <label for="">Total Hospital Beds</label><br>
+            <input type="number" id="totalHospitalBeds" data-total-hospital-beds required><br>
+            <br>
+            <button onclick="buttonClick()" data-goestimate type="submit">SUBMIT</button>
+        </form>
+    </div>
+    
+    <script>
+        const populat = document.getElementById('population').innerText;
+        const reportedCase = document.getElementById('reportedCases').textContent;
+        const timeToElap = document.getElementById('timeToElapse').textContent;
+        const period = document.getElementById('periodType').nodeValue;
+        const totalHospBeds = document.getElementById('totalHospitalBeds').innerText;
+
+        
+        const buttonClick = () => {
+            const data = {
+            region: {
+                name: "Africa",
+                avgAge: 19.7,
+                avgDailyIncomeInUSD: 5,
+                avgDailyIncomePopulation: 0.71
+            },
+            periodType: period,
+            timeToElapse: timeToElap,
+            reportedCases: reportedCase,
+            population: populat,
+            totalHospitalBeds: totalHospBeds
+            };
+
+            const myForm = document.getElementById('estForm');
+            console.log(data);
+            myForm.submit(data);
+        }
+    </script>
+    
+</body>
+</html>
