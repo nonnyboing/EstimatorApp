@@ -48,7 +48,7 @@
 </head>
 <body>
     <div id="root">
-        <H1>COVID-19 IMPACT ESTIMATOR</H1><hr>
+        <header>COVID-19 IMPACT ESTIMATOR</header><hr>
         <p>Fill in the details below (All the fields are required)</p>
         <form action="#" id="estForm" method="POST">
             <label for="">Population</label><br>
@@ -69,34 +69,34 @@
         </form>
     </div>
     
-    <script>
-        const populat = document.getElementById('population').innerText;
-        const reportedCase = document.getElementById('reportedCases').textContent;
-        const timeToElap = document.getElementById('timeToElapse').textContent;
-        const period = document.getElementById('periodType').nodeValue;
-        const totalHospBeds = document.getElementById('totalHospitalBeds').innerText;
+<script>
+  const populat = document.getElementById('population').innerText;
+  const reportedCase = document.getElementById('reportedCases').textContent;
+  const timeToElap = document.getElementById('timeToElapse').textContent;
+  const period = document.getElementById('periodType').nodeValue;
+  const totalHospBeds = document.getElementById('totalHospitalBeds').innerText;
 
-        
-        const buttonClick = () => {
-            const data = {
-            region: {
-                name: "Africa",
-                avgAge: 19.7,
-                avgDailyIncomeInUSD: 5,
-                avgDailyIncomePopulation: 0.71
-            },
-            periodType: period,
-            timeToElapse: timeToElap,
-            reportedCases: reportedCase,
-            population: populat,
-            totalHospitalBeds: totalHospBeds
-            };
 
-            const myForm = document.getElementById('estForm');
-            console.log(data);
-            myForm.submit(data);
-        }
-    </script>
+  const buttonClick = () => {
+    const data = {
+      region: {
+        name: 'Africa',
+        avgAge: 19.7,
+        avgDailyIncomeInUSD: 5,
+        avgDailyIncomePopulation: 0.71
+      },
+      periodType: period,
+      timeToElapse: timeToElap,
+      reportedCases: reportedCase,
+      population: populat,
+      totalHospitalBeds: totalHospBeds
+    };
+
+    const myForm = document.getElementById('estForm');
+    myForm.submit(data);
+  };
+
+</script>
     
 </body>
 </html>
