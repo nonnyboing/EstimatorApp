@@ -16,7 +16,7 @@ const covid19ImpactEstimator = (data) => {
   }
 
   const factor = Math.trunc(days / 3);
-  const beds = Math.trunc(totalHospitalBeds * 0.35);
+  const beds = totalHospitalBeds * 0.35;
 
   const avgIncome = region.avgDailyIncomeInUSD;
   const avgPopulation = region.avgDailyIncomePopulation;
