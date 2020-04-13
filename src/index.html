@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="a simple single page web app for my COVID-19 estimator function">
     <title>COVID-19 ESTIMATOR APP</title>
 
     <style>
@@ -73,18 +74,18 @@
         <header>COVID-19 IMPACT ESTIMATOR</header><hr>
         <p>Fill in the details below (All the fields are required)</p>
         <form action="#" id="estForm" method="POST">
-            <label for="">Population</label><br>
+            <label for="population">Population</label><br>
             <input type="number" id="population" data-population required><br>
-            <label for="">Reported Cases</label><br>
+            <label for="reportedCases">Reported Cases</label><br>
             <input type="number" id="reportedCases" data-reported-cases required><br>
-            <label for="">Time Frame</label><br>
+            <label for="timeToElapse">Time Frame</label><br>
             <input type="number" id="timeToElapse"  data-time-to-elapse required>
             <select id="periodType" data-period-type>
                 <option value="days">Days</option>
                 <option value="weeks">Weeks</option>
                 <option value="months">Months</option>
             </select><br>
-            <label for="">Total Hospital Beds</label><br>
+            <label for="totalHospitalBeds">Total Hospital Beds</label><br>
             <input type="number" id="totalHospitalBeds" data-total-hospital-beds required><br>
             <br>
             <button data-goestimate type="submit">SUBMIT</button>
