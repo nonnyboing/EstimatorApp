@@ -19,7 +19,9 @@
             color: #000000;
             padding-left: 20px;
         }
-
+        #lab {
+            margin-left: 45%;
+        }
         header {
             font-weight: bolder;
             color: #000000;
@@ -56,7 +58,7 @@
             font-weight: bolder;
             background-color: white;
             border: 5px solid black;
-            object-position: center;
+            margin-left: 35%;
             
         }
 
@@ -74,11 +76,16 @@
         <header>COVID-19 IMPACT ESTIMATOR</header><hr>
         <p>Fill in the details below (All the fields are required)</p>
         <form action="#" id="estForm" method="POST">
-            <label for="population">Population</label><br>
-            <input type="number" id="population" data-population required><br>
-            <label for="reportedCases">Reported Cases</label><br>
-            <input type="number" id="reportedCases" data-reported-cases required><br>
-            <label for="timeToElapse">Time Frame</label><br>
+            <label for="population">
+                Total Population
+                <input type="number" id="population" data-population required>
+            </label><br>
+            <label for="reportedCases">
+                Reported Cases
+                <input type="number" id="reportedCases" data-reported-cases required>
+            </label><br>
+            <label for="timeToElapse">Time Period</label>
+            <label for="periodType" id="lab">Period Type</label><br>
             <input type="number" id="timeToElapse"  data-time-to-elapse required>
             <select id="periodType" data-period-type>
                 <option value="days">Days</option>
