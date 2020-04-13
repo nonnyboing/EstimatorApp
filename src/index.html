@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="a simple single page web app for my COVID-19 estimator function">
+    <title>COVID-19 ESTIMATOR APP</title>
+
+    <style>
+        #root {
+            width: 40%;
+            margin: 20px auto;
+            border: 2px solid blue;
+            padding: 10px;
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            color: #000000;
+            padding-left: 20px;
+        }
+        #lab {
+            margin-left: 45%;
+        }
+        header {
+            font-weight: bolder;
+            color: #000000;
+            text-align: center;
+        }
+
+        p {
+            color: #000000;
+            font-weight: bold;
+            text-align: center;
+        }
+        input {
+            width: 60%;
+            height: 30px;
+            margin-bottom: 30px;
+        }
+        select {
+            height: 35px;
+            width:150px;
+            color: #000000;
+            font-weight: bold;
+            
+        }
+        label {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        #button{
+            height: 50px;
+            width: 150px;
+            color: #000000;
+            font-weight: bolder;
+            background-color: white;
+            border: 2px solid blue;
+            margin-left: 35%;
+            
+        }
+
+        @media screen and (max-width: 720px) {
+            #root {
+                width: 80%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="root">
+        <header>COVID-19 IMPACT ESTIMATOR</header><hr>
+        <p>Fill in the details below (All the fields are required)</p>
+        <form action="#" id="estForm" method="POST">
+            <label for="population">
+                Total Population
+                <input type="number" id="population" data-population required>
+            </label><br>
+            <label for="reportedCases">
+                Reported Cases
+                <input type="number" id="reportedCases" data-reported-cases required>
+            </label><br>
+            <label for="timeToElapse">Time Period</label>
+            <label for="periodType" id="lab">Period Type</label><br>
+            <input type="number" id="timeToElapse"  data-time-to-elapse required>
+            <select id="periodType" data-period-type>
+                <option value="days">Days</option>
+                <option value="weeks">Weeks</option>
+                <option value="months">Months</option>
+            </select><br>
+            <label for="totalHospitalBeds">Total Hospital Beds</label><br>
+            <input type="number" id="totalHospitalBeds" data-total-hospital-beds required><br>
+            <br>
+            <input id="button" type="submit" data-go-estimate>
+        </form>
+    </div>    
+</body>
+</html>
